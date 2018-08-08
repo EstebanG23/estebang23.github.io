@@ -1,8 +1,20 @@
-import {MDCRipple} from '@material/ripple';
-import {MDCTextField} from '@material/textfield';
+// import {MDCTopAppBar} from '@material/top-app-bar/index';
 
-const username = new MDCTextField(document.querySelector('.username'));
-const password = new MDCTextField(document.querySelector('.password'));
+// Instantiation
+// const topAppBarElement = document.querySelector('.mdc-top-app-bar');
+// const topAppBar = new MDCTopAppBar(topAppBarElement);
 
-new MDCRipple(document.querySelector('.cancel'));
-new MDCRipple(document.querySelector('.next'));
+document.querySelector('.index-name').addEventListener('animationend', goToHomePage);
+document.querySelector('.shrine-login').addEventListener('transitionend', disappearHomePage);
+
+function goToHomePage(evt) {
+  if (evt.target.classList.contains('index-name')) {
+    // document.querySelector('.shrine-login').classList.add('logo-disappear');
+  }
+}
+
+function disappearHomePage(evt) {
+  if (evt.target.classList.contains('logo-disappear')) {
+    document.querySelector('.shrine-login').remove();
+  }
+}
